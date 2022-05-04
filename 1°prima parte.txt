@@ -1,0 +1,77 @@
+#include <iostream>
+using namespace std;
+
+struct libri
+{
+  string titolo;
+  string autore;
+  string Editore;
+  int Codice,anno;
+  int temporanea;
+  float prezzo;
+};
+int inserimento(Anag libro[])
+{
+  int n;
+  cout<<"INSERISCI IL NUMERO DEI TUOI ALUNNI"<<endl;
+  cin>>n;
+  for(int i = 0; i < n; i++)
+  {
+    cout<<"IMMETTI IL TITOLO "<<endl;
+    cin>> libro[i].titolo;
+    cout<<"___________________________________"<<endl;
+    cout<<"IMMETTI IL NOME DELL' AUTORE "<<endl;
+    cin>> libro[i].autore;
+    cout<<"___________________________________"<<endl;
+    cout<<"EDITORE LIBRO "<<endl;
+    cin>>libro[i].Editore;
+    cout<<"___________________________________"<<endl;
+    cout<<"CODICE ISBN "<<endl;
+    cin>>libro[i].Codice;
+    cout<<"___________________________________"<<endl;
+    cout<<"ANN0 D'USCITA "<<endl;
+    cin>>libro[i].anno;
+    cout<<"___________________________________"<<endl;
+    cout<<"PREZZO DEL LIBRO "<<endl;
+    cin>>libro[i].prezzo;
+  }
+  return n;
+}
+void stampa(Anag libro[], int n)
+{
+    int j;
+    for(int i = 0; i < n; i++)
+    {
+    cout<<"IL TITOLO E' : "<<libro[i].titolo<<endl;
+    cout<<"L'AUTORE DEL LIBRO E' : "<<libro[i].autore<<endl;
+    cout<<"L'EDITORE DELL LIBRO E' : "<<libro[i].Editore<<endl;
+    cout<<"IL CODICE ISBN DEL LIBRO E' : "<<libro[i].Codice<<endl;
+    cout<<"L'ANNO DI USCITA DEL LIBRO E' : "<<libro[i].anno<<endl;
+    cout<<"IL PREZZO DEL LIBRO E': "<<libro[i].prezzo<<endl;
+    }
+
+}
+void crescente(Anag libro[], int n)
+{
+    int temporanea;
+    for(int i = 0; i < n-1; i++)
+    {
+        for(int j = i+1; j < n; j++)
+        if(alunno[i].italiano < alunno[j].matematica )
+        {
+            temporanea = alunno[i].italiano;
+            alunno[i].italiano = alunno[j].matematica;
+            alunno[j].matematica = temporanea;
+        }
+
+    }
+}
+int main()
+{
+    int n = 0;
+    Anag libro[50];
+    n = inserimento(libro);
+    crescente(libro, n);
+    stampa(libro, n);
+    return 0;
+}
