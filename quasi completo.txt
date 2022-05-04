@@ -1,0 +1,94 @@
+/******************************************************************************
+
+                              Online C++ Compiler.
+               Code, Compile, Run and Debug C++ program online.
+Write your code in this editor and press "Run" button to compile and execute it.
+
+*******************************************************************************/
+
+#include <iostream> 
+#include <string> 
+#define Q 10 
+using namespace std; 
+ 
+typedef struct 
+{ 
+    float prezzo; 
+    string genere;
+    string ISBN; 
+    string titolo; 
+    string autore; 
+    string editore; 
+    int anno; 
+    int t; 
+    
+}libro;
+
+ 
+int inserimento(int c) 
+{ 
+    libro libri[Q]; 
+    cout << "____INSERIMENTO LIBRO___" << endl; 
+    cout << " INSERISCI IL CODICE DEL LIBRO: "; 
+    cin >> libri[c].ISBN; 
+    cout << " INSERISCI IL TITOLO DEL LIBRO: "; 
+    cin >> libri[c].titolo; 
+    cout << " INSERISCI L'AUTORE DEL LIBRO: "; 
+    cin >> libri[c].autore; 
+    cout << " INSERISCI L'EDITORE DEL LIBRO: "; 
+    cin >> libri[c].editore; 
+    cout << " INSERISCI IL'ANNO DEL LIBRO: "; 
+    cin >> libri[c].anno; 
+    cout << " INSERISCI IL PREZZO DEL LIBRO: "; 
+    cin >> libri[c].prezzo; 
+    cout << " INSERISCI IL GENERE DEL LIBRO: "; 
+    cin >> libri[c].genere; 
+    c++; 
+} 
+
+
+
+
+
+ int stampa(int c) 
+{ 
+    libro libri[Q]; 
+    cout << "____CATALOGO___" << endl; 
+    for(int i=0; i<c; i++) 
+    { 
+        cout << i+1 <<": "<<libri[i].ISBN<<"  TITOLO: "<<libri[i].titolo<<"   AUTORE: "<<libri[i].autore<<"   EDITORE: "<<libri[i].editore<<"   ANNO: "<<libri[i].anno<<"   PREZZO: "<<libri[i].prezzo<<"   GENERE: "<<libri[i].genere<<endl<<endl; 
+    } 
+} 
+
+
+
+
+
+int main() 
+{  
+    int scelta=0, c=0; 
+    while(scelta!=6) 
+    { 
+        cout << "______________" << endl; 
+        cout << " BIBLIOTECA DI ANDREA LONGO " << endl; 
+        cout << "______________" << endl; 
+        cout << "1) AGGIUNGI LIBRO" << endl; 
+        cout << "2) VISUALIZZA CATALOGO LIBRI " << endl; 
+        cout << "3) RICERCA LIBRO" << endl; 
+        cout << "4) MODIFICARE DATI LIBRO" << endl; 
+        cout << "5) ELIMINA" << endl; 
+        cout << "6) USCITA" << endl; 
+        do{ 
+            cout << " SELEZIONA: "; 
+            cin >> scelta; 
+        }while(scelta<1 || scelta>6); 
+        cout << "\n______________" << endl; 
+ 
+        if(scelta==1) inserimento(c); 
+        if(scelta==2) stampa(c); 
+         
+        if(scelta==6) break; 
+    } 
+    stampa(c);
+    return 0; 
+}
